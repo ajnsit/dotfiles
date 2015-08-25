@@ -173,8 +173,8 @@ before layers configuration."
   ;; Make sure all Haskell tools are on the path
   (add-to-list 'exec-path "~/.local/bin/")
   (add-to-list 'exec-path "~/.cabal/bin/")
-  (add-to-list 'exec-path "/opt/ghc/7.8.4/bin/")
-  (add-to-list 'exec-path "/opt/cabal/1.2.0/bin/")
+  (add-to-list 'exec-path "/opt/ghc/7.10.2/bin/")
+  (add-to-list 'exec-path "/opt/cabal/1.22/bin/")
   )
 
 (defun dotspacemacs/config ()

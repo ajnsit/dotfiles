@@ -197,7 +197,7 @@ set +o histexpand
 # Added Haskell PPA paths
 # Added Emacs (home compiled) path
 # Added Haskell Stack executables path (~/.local/bin)
-export PATH=$HOME/.local/bin:$HOME/.cabal/bin:/opt/ghc/7.10.2/bin:/opt/ghc/7.8.4/bin:/opt/alex/3.1.4/bin:/opt/happy/1.19.5/bin:/opt/emacs/bin:$HOME/progs/android/sdk/platform-tools:$HOME/progs/android/sdk/tools:$PATH
+export PATH=$HOME/.local/bin:$HOME/.cabal/bin:/opt/ghc/7.10.2/bin:/opt/alex/3.1.4/bin:/opt/happy/1.19.5/bin:/opt/emacs/bin:$HOME/progs/android/sdk/platform-tools:$HOME/progs/android/sdk/tools:$PATH
 
 # Added elm home path
 # Corresponding to elm npm install - https://www.npmjs.com/package/elm
