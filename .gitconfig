@@ -1,9 +1,17 @@
 [user]
-	name = Anupam Jain
-	email = ajnsit@gmail.com
+  name = Anupam Jain
+  email = ajnsit@gmail.com
 [push]
-	default = simple
+  default = simple
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+  # Needs sudo apt-get install inotify-tools
+  # Leave `git watch` running in a visible terminal
+  watch = "!clear;inotifywait --quiet -mr -e modify,move,create,delete --format \"%f %e\" @/.git . | \
+    while read file; do \
+      clear;\
+      git status --short;\
+      git --no-pager diff --shortstat;\
+    done;"
 [core]
-	editor = /usr/bin/vim
+  editor = /usr/bin/vim
