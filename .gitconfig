@@ -5,6 +5,7 @@
   default = simple
 [alias]
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+  st = status -s
   # Needs sudo apt-get install inotify-tools
   # Leave `git watch` running in a visible terminal
   watch = "!clear;inotifywait --quiet -mr -e modify,move,create,delete --format \"%f %e\" @/.git . | \
