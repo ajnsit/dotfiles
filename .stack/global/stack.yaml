@@ -1,12 +1,12 @@
 flags: {}
 packages: []
 extra-deps:
-# Needed for codex-0.3.0.8
-# - hackage-db-1.22
-# Needed for haste-compiler-0.5.0.1
-- ghc-simple-0.1.2.1
-- shellmate-0.1.6
-# Needed for ghc-mod 5.3.0.0
-# Install ghc-mod from git repo now
-#- cabal-helper-0.5.1.0 
-resolver: lts-3.1
+  # For ghc-mod (0.5.4)
+  - cabal-helper-0.6.0.0
+  # For fltk
+  - fltkhs-fluid-examples-0.0.0.1
+  - fltkhs-0.1.0.2
+  # For hscope-0.4.2
+  - pure-cdb-0.1.1
+resolver: lts-3.15
+
