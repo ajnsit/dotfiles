@@ -196,23 +196,21 @@ set +o histexpand
 # Add android SDK
 # Added Haskell PPA paths
 # Added Emacs (home compiled) path
-# Added Haskell Stack executables path (~/.local/bin)
-export PATH=$HOME/.local/bin:$HOME/.cabal/bin:/opt/ghc/7.10.2/bin:/opt/alex/3.1.4/bin:/opt/happy/1.19.5/bin:/opt/emacs/bin:$HOME/progs/android/sdk/platform-tools:$HOME/progs/android/sdk/tools:$PATH
+export PATH=/opt/ghc/7.10.2/bin:/opt/alex/3.1.4/bin:/opt/happy/1.19.5/bin:/opt/emacs/bin:$HOME/progs/android/sdk/platform-tools:$HOME/progs/android/sdk/tools:$PATH
 
 # Added elm home path
 # Corresponding to elm npm install - https://www.npmjs.com/package/elm
 export ELM_HOME=/usr/lib/node_modules/elm/share
 
 # Add cabal path
-# Note that when using ghc-7.8 -
-#   ghc-mod cannot work cabal-1.22+
-#    See https://github.com/kazu-yamamoto/ghc-mod/wiki/InconsistentCabalVersions#ghc--710-1
-#   whereas ghcjs requires cabal-1.22+
-# Currently I need ghcjs so I've upgraded to cabal 1.22
-# If you need ghc-mod, downgrade cabal to 1.20
-# export PATH=/opt/cabal/1.18/bin:$PATH
 # export PATH=/opt/cabal/1.20/bin:$PATH
+# Moving to installing cabal from source repo
+# http://blog.ezyang.com/2015/08/help-us-beta-test-no-reinstall-cabal/
 export PATH=/opt/cabal/1.22/bin:$PATH
+# Add the cabal bin dir
+export PATH=$HOME/.cabal/bin:$PATH
+# Add the local (used by stack) bin dir on top of everything else
+export PATH=$HOME/.local/bin:$PATH
 
 # Set a 256 color terminal
 # Needed for vim and tmux
@@ -320,10 +318,18 @@ alias .......="cd ../../../../../.."
 alias enablessh='sudo mv /etc/init/ssh.conf.disabled /etc/init/ssh.conf && sudo start ssh'
 alias disablessh='sudo stop ssh && sudo mv /etc/init/ssh.conf /etc/init/ssh.conf.disabled'
 
+# Run spacemacs
+alias spacemacs='env XLIB_SKIP_ARGB_VISUALS=1 emacs -name Spacemacs %F'
 
 ##############################
 ##==--~~ MY FUNCTIONS ~~--==##
 ##############################
+
+# Check which apt-get package installed this file
+function whoinstalled() {
+  echo "grep -l $1 /var/lib/dpkg/info/*.list"
+  grep -l $1 /var/lib/dpkg/info/*.list
+}
 
 # les = less + ls
 # If the arg is a dir then run ls
@@ -424,6 +430,9 @@ function genie() {
     # say $result 2>/dev/null
 }
 
+##############################################################################
+# Enable bash completion with stack (the haskell tool)
+eval "$(stack --bash-completion-script "$(which stack)")"
 
 ##############################################################################
 # unregister broken GHC packages. Run this a few times to resolve dependency rot in installed packages.
