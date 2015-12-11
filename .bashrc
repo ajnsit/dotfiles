@@ -194,35 +194,26 @@ set +o histexpand
 
 # Modified path
 # Add android SDK
-# Added Haskell PPA paths
-# Added Emacs (home compiled) path
-export PATH=/opt/ghc/7.10.2/bin:/opt/alex/3.1.4/bin:/opt/happy/1.19.5/bin:/opt/emacs/bin:$HOME/progs/android/sdk/platform-tools:$HOME/progs/android/sdk/tools:$PATH
+export PATH=$HOME/progs/android/sdk/platform-tools:$HOME/progs/android/sdk/tools:$PATH
+
+# Add the local (used by stack) bin dir on top of everything else
+export PATH=$HOME/.local/bin:$PATH
 
 # Added elm home path
 # Corresponding to elm npm install - https://www.npmjs.com/package/elm
 export ELM_HOME=/usr/lib/node_modules/elm/share
 
-# Add cabal path
-# export PATH=/opt/cabal/1.20/bin:$PATH
-# Moving to installing cabal from source repo
-# http://blog.ezyang.com/2015/08/help-us-beta-test-no-reinstall-cabal/
-export PATH=/opt/cabal/1.22/bin:$PATH
-# Add the cabal bin dir
-export PATH=$HOME/.cabal/bin:$PATH
-# Add the local (used by stack) bin dir on top of everything else
-export PATH=$HOME/.local/bin:$PATH
+# Java Home
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
 
 # Set a 256 color terminal
 # Needed for vim and tmux
 if [ -n "$TMUX" ]; then
-  # Tmux really, really, wants screen-256color
-  export TERM=screen-256color
+    # Tmux really, really, wants screen-256color
+    export TERM=screen-256color
 else
-  export TERM=xterm-256color
+    export TERM=xterm-256color
 fi
-
-# Java Home
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
 
 # I am unable to start emacs on elementary OS Freya without this flag.
 # ERROR MESSAGE IS -
