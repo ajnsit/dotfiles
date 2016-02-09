@@ -30,10 +30,11 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
-     ;; (git :variables
-     ;;     git-magit-status-fullscreen t
-     ;;     git-enable-github-support t
-     ;;     git-gutter-use-fringe t)
+     eyebrowse
+     (git :variables
+         git-magit-status-fullscreen t
+         git-enable-github-support t
+         git-gutter-use-fringe t)
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -47,10 +48,12 @@ values."
      haskell
      ;; Web Development
      elm
+     purescript
      react
      javascript
      html
      markdown
+     python
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
