@@ -255,7 +255,9 @@ bind -m vi-insert "\C-n":menu-complete
 alias govi="set -o vi"
 alias goemacs="set -o emacs"
 
-
+# Stop the kernel error messages madness!
+# On the other hand, I should probably replace my hdd instead of ignoring errors
+alias stopitstopit="sudo sysctl -w kernel.printk=\"2 4 1 7\""
 
 
 
