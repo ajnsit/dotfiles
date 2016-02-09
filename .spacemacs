@@ -283,23 +283,5 @@ layers configuration. You are free to put any user code."
   ;; (fringe-mode '(4 . 0))
   )
 
-
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (ws-butler lorem-ipsum powerline git-gutter-fringe+ git-gutter-fringe git-gutter+ git-gutter tern popup help-fns+ bind-map ace-jump-helm-line auto-complete f haskell-mode projectile yasnippet persp-mode evil-indent-plus async smartparens helm-core hydra evil-magit magit-popup with-editor mmm-mode markdown-toc markdown-mode gh-md web-mode web-beautify tagedit slim-mode scss-mode sass-mode less-css-mode json-mode js2-refactor js2-mode js-doc jade-mode helm-css-scss haml-mode emmet-mode company-web company-tern coffee-mode elm-mode avy window-numbering volatile-highlights vi-tilde-fringe spray spacemacs-theme spaceline smooth-scrolling smeargle shm restart-emacs rainbow-delimiters popwin pcre2el paradox page-break-lines open-junk-file neotree move-text magit-gitflow magit macrostep linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hindent highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag helm haskell-snippets google-translate golden-ratio gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-commit flycheck-pos-tip flycheck-haskell flycheck flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav diff-hl define-word company-statistics company-quickhelp company-ghc company-cabal company cmm-mode clean-aindent-mode buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ac-ispell evil-leader evil which-key quelpa package-build use-package bind-key s dash zenburn-theme))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:foreground "#DCDCCC" :background "#3F3F3F"))))
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
