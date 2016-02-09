@@ -197,7 +197,7 @@ set +o histexpand
 export PATH=$HOME/progs/android/sdk/platform-tools:$HOME/progs/android/sdk/tools:$PATH
 
 # Add the local (used by stack) bin dir on top of everything else
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.stack/programs/x86_64-linux/ghc-7.10.3/bin:$HOME/.local/bin:$PATH
 
 # Added elm home path
 # Corresponding to elm npm install - https://www.npmjs.com/package/elm
