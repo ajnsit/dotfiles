@@ -280,6 +280,31 @@ layers configuration. You are free to put any user code."
   ;; Debug ghc-mod
   (setq ghc-debug t)
 
+  ;; Need 2 space indentation
+  ;; From - https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bframeworks/react#optional-configuration
+  (setq-default
+   ;; haskell mode
+   haskell-indentation-layout-offset 2
+   elm-indent-offset 2
+   ;; js2-mode
+   js2-basic-offset 2
+   ;; web-mode
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
+
+  (with-eval-after-load 'web-mode
+    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+
+  ;; Indentation is borked in elm-mode
+  ;; https://github.com/jcollard/elm-mode/issues/45#issuecomment-164706067
+  (setq spacemacs-indent-sensitive-modes
+        (add-to-list 'spacemacs-indent-sensitive-modes 'elm-mode))
+
   ;; Disable fringe
   ;; (set-fringe-mode 0)
   ;; make the left fringe 4 pixels wide and the right disappear
